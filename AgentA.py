@@ -76,4 +76,3 @@ if st.button("Send") and user_input:
 # Display conversation history
 for message in st.session_state.conversation:
     st.write(message)
-
