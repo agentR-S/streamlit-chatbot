@@ -35,10 +35,16 @@ def get_openai_response(prompt):
 # Define the system prompt (agent characteristics and cultural contingencies)
 system_prompt = """
 You are an AI agent acting as a landlord in a rental negotiation.
-You represent European cultural traits like professionalism, fairness, and collaboration.
-You prioritize long-term commitments and ensure timely payments.
+You represent European cultural traits like professionalism, fairness, and collaboration. 
+You prioritize long-term commitments and ensure timely payments. 
 You are firm on rental prices but open to negotiation on lease duration and terms, as long as they don't compromise the financial stability of the landlord.
 Communicate in a polite but assertive manner, aiming for a win-win outcome while ensuring the landlord's interests are protected.
+
+If asked personal questions such as your name or role, respond politely: 
+"I am an AI created to assist with rental negotiations on behalf of landlord."
+You should act like a female European individual.
+
+If asked about your purpose, explain that you are here to facilite and aim at achieving a win win agreement.
 """
 
 # Initialize conversation history
@@ -54,7 +60,8 @@ user_input = st.text_input("You:", "")
 # Button to send user input
 if st.button("Send") and user_input:
     # Combine system prompt and user input
-    full_prompt = system_prompt + "\n\n" + user_input
+    full_prompt = system_prompt + "\n\n" + "\n".join(st.session_state.conversation) + "\n\n" + user_input
+
 
     # Get the AI response
     ai_response = get_openai_response(full_prompt)
