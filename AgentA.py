@@ -5,7 +5,7 @@ import json
 # Set up your Azure OpenAI API key and endpoint
 api_key = "77fb8580ac764c64b4efd18333c56c31"  # Replace with your actual Azure OpenAI API key
 endpoint = "https://agenta.openai.azure.com/"  # Replace with your actual Azure OpenAI endpoint
-deployment_id = "/subscriptions/dd08d4d2-7316-4eb0-bcbc-13df3501971d/resourceGroups/Agent1/providers/Microsoft.CognitiveServices/accounts/AgentA"  # Replace with your actual deployment ID
+deployment_id = "/subscriptions/dd08d4d2-7316-4eb0-bcbc-13df3501971d/resourceGroups/AgentFinal/providers/Microsoft.CognitiveServices/accounts/AgentA"  # Replace with your actual deployment ID
 
 # Headers for authentication
 headers = {
