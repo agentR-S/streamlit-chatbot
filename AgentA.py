@@ -70,7 +70,3 @@ if st.button("Send") and user_input:
 for message in st.session_state.conversation:
     st.write(message)
 
-from pyngrok import ngrok
-
-# Authenticate ngrok with your token
-ngrok.set_auth_token("2nKKf4ItmeTd34LA4Bj0d78XI0r_wAbYxjaSXQ7guzkcr7aa")
